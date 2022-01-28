@@ -1,4 +1,5 @@
-import FileUpload from './FileUpload';
+import FileUpload from "./components/FileUpload";
+
 
 
 function App() {
@@ -10,7 +11,6 @@ function App() {
       </header>
       <FileUpload />
     </div>
-
   );
 }
 

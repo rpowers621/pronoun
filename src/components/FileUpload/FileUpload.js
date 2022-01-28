@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
-import './App.css';
+import React from 'react';
 
 
 function FileUpload() {
