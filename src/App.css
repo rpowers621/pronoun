@@ -13,6 +13,9 @@
   font-size: calc(10px + 1vmin);
   color: white;
 }
+.nav-header{
+  float:right !important;
+}
 
 .text-box{
   margin-top: 5em;

@@ -1,64 +1,24 @@
-import React, { Component } from 'react';
-import {
-    MDBNavbar,
-    MDBNavbarBrand,
-    MDBNavbarNav,
-    MDBNavItem,
-    MDBNavLink,
-    MDBNavbarToggler,
-    MDBCollapse,
-    MDBContainer
-} from 'mdbreact';
-import { BrowserRouter as Router } from 'react-router-dom';
+import React from "react";
+import { bool, func } from 'prop-types';
+import { StyledNavBar } from "./NavBar.styled";
+import './nav.css';
 
-class NavBar extends Component {
-    state = {
-        collapseID: ''
-    };
-
-    toggleCollapse = collapseID => () => {
-        this.setState(prevState => ({
-            collapseID: prevState.collapseID !== collapseID ? collapseID : ''
-        }));
-    };
-
-    render() {
-        return (
-            <Router>
-                <MDBContainer>
-                    <MDBNavbar
-                        color='light-blue lighten-4'
-                        style={{ marginTop: '20px' }}
-                        light
-                    >
-                        <MDBContainer>
-                            <MDBNavbarBrand>Navbar</MDBNavbarBrand>
-                            <MDBNavbarToggler
-                                onClick={this.toggleCollapse('navbarCollapse1')}
-                            />
-                            <MDBCollapse
-                                id='navbarCollapse1'
-                                isOpen={this.state.collapseID}
-                                navbar
-                            >
-                                <MDBNavbarNav left>
-                                    <MDBNavItem active>
-                                        <MDBNavLink to='#!'>Home</MDBNavLink>
-                                    </MDBNavItem>
-                                    <MDBNavItem>
-                                        <MDBNavLink to='#!'>Link</MDBNavLink>
-                                    </MDBNavItem>
-                                    <MDBNavItem>
-                                        <MDBNavLink to='#!'>Profile</MDBNavLink>
-                                    </MDBNavItem>
-                                </MDBNavbarNav>
-                            </MDBCollapse>
-                        </MDBContainer>
-                    </MDBNavbar>
-                </MDBContainer>
-            </Router>
-        );
-    }
+const NavBar = ({ open, setOpen }) => {
+    return (
+        <div className="nav-header">
+            <h1>ProNoun</h1>
+            <div className="nav-box">
+                <StyledNavBar open={open} onClick={() => setOpen(!open)} >
+                    <div />
+                    <div />
+                    <div />
+                </StyledNavBar>
+            </div>
+        </div>
+    )
 }
-
-export default NavBar
+NavBar.propTypes = {
+    open: bool.isRequired,
+    setOpen: func.isRequired,
+};
+export default NavBar;
