@@ -9,7 +9,7 @@ const Menu = ({ open }) => {
                 About us
             </a>
             <a href="/">
-                Pricing
+                Sign In
             </a>
             <a href="/">
                 Contact

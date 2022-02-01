@@ -1,12 +1,13 @@
 import React from "react";
 import { bool, func } from 'prop-types';
 import { StyledNavBar } from "./NavBar.styled";
+import { Link } from "react-router-dom";
 import './nav.css';
 
 const NavBar = ({ open, setOpen }) => {
     return (
         <div className="nav-header">
-            <h1>ProNoun</h1>
+            <Link to='/' style={{ textDecoration: 'none', color: 'white' }}> <h1>Shhhh</h1></Link>
             <div className="nav-box">
                 <StyledNavBar open={open} onClick={() => setOpen(!open)} >
                     <div />

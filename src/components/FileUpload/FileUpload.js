@@ -26,18 +26,15 @@ function FileUpload() {
     return (
         <div>
             <Container className='text-box'>
-                <Row>
-                    <Col>
-                        <Form>
-                            <Form.Group className="mb-3" >
-                                <Form.Label>Please select file to <i>ProNoun</i></Form.Label>
-                                <br />
-                                <input type='file' onChange={(e) => setSelectedFile(e.target.files[0])} accept='.doc,.docx,.txt' />
-                            </Form.Group>
-                            <Button variant="primary" type="submit" onClick={sendFile}>Submit</Button>
-                        </Form>
-                    </Col>
-                </Row>
+                <form>
+                    <div className='form-row'>
+                        <div className='form-group'>
+                            <label for='fileName'>Upload File</label>
+                            <input type='file' className='form-control' id='fileName' placeholder='Select File' onChange={(e) => setSelectedFile(e.target.files[0])} accept='.doc,.docx,.txt' />
+                        </div>
+                        <Button variant="primary" type="submit" onClick={sendFile}>Submit</Button>
+                    </div>
+                </form>
             </Container>
         </div>
     );
