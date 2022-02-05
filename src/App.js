@@ -5,7 +5,7 @@ import { useOnClickOutside } from './hooks';
 import React, { useState, useRef } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
-import Landing from "./Landing";
+import Landing from "./components/Landing/Landing";
 
 
 

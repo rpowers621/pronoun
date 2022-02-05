@@ -12,6 +12,7 @@
   padding-left: 3em;
   font-size: calc(10px + 1vmin);
   color: white;
+  min-height: 100px;
 }
 .nav-header{
   float:right !important;

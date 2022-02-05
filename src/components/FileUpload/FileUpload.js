@@ -1,42 +1,70 @@
-import { useState } from 'react';
+import { Component } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import React from 'react';
+import { render } from '@testing-library/react';
 
 
-function FileUpload() {
-    const [selectedFile, setSelectedFile] = useState(null);
+class FileUpload extends Component {
 
-    function sendFile() {
-        var file = String(selectedFile.name);
-        console.log(file);
-        fetch('/readData', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ "file": file }),
-        }).then((response) => response.json()).then((resData) => {
-            console.log(resData);
-        });
+    constructor(props) {
+        super(props);
+        this.state = {
+            disabled: true
+        };
+        this.handleChange = this.handleChange.bind(this);
+        console.log(this.state.disabled);
+    }
+
+    handleChange(event) {
+        console.log(event.target.value);
+        if (event.target.value == 'false') {
+            this.setState({ disabled: false });
+            console.log(this.state.disabled);
+        } else {
+            this.setState({ disabled: true });
+        }
 
     }
 
+    render() {
+        return (
+            <div>
+                <Container className='text-box'>
+                    <Form>
+                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                            <Form.Label>Upload File</Form.Label>
+                            <Form.Control type="file" id='fileName' placeholder='Select File' accept='.doc,.docx,.txt' />
+                        </Form.Group>
+                        <Row className='mb-3'>
+                            <Col>
+                                <Form.Control as='select'>
+                                    <option>Select pronoun to replace</option>
+                                    <option value="he">He</option>
+                                    <option value="she">She</option>
+                                    <option value="they/them">They/Them</option>
+                                    <option value="other">Other</option>
+                                </Form.Control>
+                            </Col>
+                            <Col>
+                                <Form.Control as='select' value={this.state.value} onChange={(this.handleChange)}>
+                                    <option>Select replacement pronoun </option>
+                                    <option value="he">He</option>
+                                    <option value="she">She</option>
+                                    <option value="they/them">They/Them</option>
+                                    <option value="false" >Other</option>
+                                </Form.Control>
+                            </Col>
 
-    return (
-        <div>
-            <Container className='text-box'>
-                <form>
-                    <div className='form-row'>
-                        <div className='form-group'>
-                            <label for='fileName'>Upload File</label>
-                            <input type='file' className='form-control' id='fileName' placeholder='Select File' onChange={(e) => setSelectedFile(e.target.files[0])} accept='.doc,.docx,.txt' />
-                        </div>
-                        <Button variant="primary" type="submit" onClick={sendFile}>Submit</Button>
-                    </div>
-                </form>
-            </Container>
-        </div>
-    );
+                            <Col>
+                                <Form.Control type="text" placeholder="Custom pronoun" disabled={this.state.disabled} />
+                            </Col>
+                        </Row>
+                        <Button type='sumbit'>Submit</Button>
+                    </Form>
+                </Container>
+            </div>
+        );
+    }
 }
 export default FileUpload;
