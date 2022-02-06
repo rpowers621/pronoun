@@ -6,6 +6,7 @@ import React, { useState, useRef } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import Landing from "./components/Landing/Landing";
+import Footer from "./components/Footer/Footer";
 
 
 
@@ -14,6 +15,7 @@ function App() {
   const node = useRef();
   useOnClickOutside(node, () => setOpen(false));
   return (
+
     <BrowserRouter>
       <div className="App">
         <header ref={node} className="App-header">
@@ -24,9 +26,10 @@ function App() {
           <Route exact path="/" exact element={<Landing />} />
           <Route path='/File_Upload' element={<FileUpload />} />
         </Routes>
-
       </div>
+      <Footer className='footer' />
     </BrowserRouter>
+
   );
 }
 

@@ -1,16 +1,17 @@
 import styled from 'styled-components';
 
 export const StyledMenu = styled.nav`
-  transform: translateX(100%);
+  
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  backdrop-filter: blur(5px);
+  z-index:10;
   height: 100vh;
   text-align: right;
   padding: 2rem;
-  position: absolute;
+  position: absolute !important;
   top: 0;
   right: 0;
   transition: transform 0.3s ease-in-out;
@@ -18,7 +19,6 @@ export const StyledMenu = styled.nav`
   @media (max-width: 500px) {
     width: 100%;
   }
-
   a {
     font-size: 2rem;
     text-transform: uppercase;
@@ -26,17 +26,25 @@ export const StyledMenu = styled.nav`
     font-weight: bold;
     letter-spacing: 0.5rem;
     color: black;
+    font-weight: bold;
     text-decoration: none;
     transition: color 0.3s linear;
+    
+  
     
     @media (max-width: 500px) {
       font-size: 1.5rem;
       text-align: center;
+     
     }
-
+  
     &:hover {
       color: red;
     }
   
+
+ 
   }
 `;
+
+

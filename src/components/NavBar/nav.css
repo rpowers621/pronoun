@@ -11,7 +11,13 @@
  
   }
   
-  h1{
+  p {
     color: whtie;
     text-decoration: none;
+    font-size: 3vw;
+    font-weight: bold;
+  }
+
+  .a{
+    pointer-events:initial;
   }

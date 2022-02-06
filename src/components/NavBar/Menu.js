@@ -4,17 +4,22 @@ import { StyledMenu } from './Menu.styled';
 
 const Menu = ({ open }) => {
     return (
-        <StyledMenu open={open}>
-            <a href="/">
-                About us
-            </a>
-            <a href="/">
-                Sign In
-            </a>
-            <a href="/">
-                Contact
-            </a>
-        </StyledMenu>
+        <div className>
+            <StyledMenu open={open}>
+                <a href="/">
+                    About us
+                </a >
+                <a href="/">
+                    Sign In
+                </a >
+                <a href="/File_Upload">
+                    Upload
+                </a >
+                <a href="/">
+                    Contact
+                </a>
+            </StyledMenu>
+        </div>
     )
 }
 Menu.propTypes = {

@@ -1,4 +1,7 @@
 Flask 
 Flask_login
 python-docx
- 
+
+//npm install express
+//npm install --save styled-components
+//npm i -S react-scroll

@@ -1,6 +1,8 @@
 .App {
   text-align: center;
+  height: 100%;
 }
+
 
 .App-header {
   background-color: #282c34;
@@ -13,6 +15,7 @@
   font-size: calc(10px + 1vmin);
   color: white;
   min-height: 100px;
+
 }
 .nav-header{
   float:right !important;
@@ -20,4 +23,10 @@
 
 .text-box{
   margin-top: 5em;
+}
+.a{
+  pointer-events:initial;
+}
+.footer{
+  bottom: 0;
 }

@@ -7,7 +7,7 @@ import './nav.css';
 const NavBar = ({ open, setOpen }) => {
     return (
         <div className="nav-header">
-            <Link to='/' style={{ textDecoration: 'none', color: 'white' }}> <h1>Shhhh</h1></Link>
+            <Link to='/' style={{ textDecoration: 'none', color: 'white' }}> <p>Shhhh</p></Link>
             <div className="nav-box">
                 <StyledNavBar open={open} onClick={() => setOpen(!open)} >
                     <div />
